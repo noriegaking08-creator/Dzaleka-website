@@ -1,0 +1,40 @@
+dzaleka-cdss-website/
+├─ backend/
+│  ├─ app.py
+│  ├─ configure.py
+│  ├─ routes.py
+│  ├─ data.py
+│  ├─ requirements.txt
+│  ├─ contacts.json
+│  └─ static/
+│     ├─ frontend/      (created after building frontend)
+│     └─ images/
+│        ├─ image1.jpg
+│        ├─ image2.jpg
+│        ├─ image3.jpg
+│        ├─ image4.jpg
+│        └─ 25221.jpg    (additional image file)
+└─ frontend/
+   ├─ package.json
+   ├─ tsconfig.json
+   ├─ public/
+   │  └─ index.html
+   └─ src/
+      ├─ index.js
+      ├─ App.tsx
+      ├─ Api.ts
+      ├─ styles.css
+      ├─ context/
+      │  └─ ThemeContext.tsx
+      └─ components/
+         ├─ Navbar.tsx
+         ├─ Home.tsx
+         ├─ About.tsx
+         ├─ Achievements.tsx
+         ├─ Supporters.tsx
+         ├─ Gallery.tsx
+         ├─ Developer.tsx
+         ├─ Contact.tsx
+         ├─ Spinner.tsx
+         ├─ ErrorBoundary.tsx
+         └─ Lightbox.tsx

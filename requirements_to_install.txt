@@ -1,0 +1,299 @@
+list all the things that i need to install inoder to run the website
+Copilot said: Here’s a complete, practical checklist of everything
+Here’s a complete, practical checklist of everything you need to install (and optional extras) to run the Dzaleka CDSS website locally (backend + frontend), plus exact commands for common OSes and short notes about configuration.
+
+Summary (minimum)
+
+Git (optional but recommended)
+Python 3.8+ (recommended 3.8–3.11)
+pip (Python package installer)
+python venv (virtual environment module)
+Node.js (recommended v16 or v18 LTS)
+npm (Node package manager)
+Browser (Chrome/Firefox/Edge)
+The project files (backend/ and frontend/ folders)
+The four image files saved to backend/static/images/ named image1.jpg ... image4.jpg
+Detailed install list and commands
+
+Git
+Purpose: clone the repo (optional if you already have the files)
+Ubuntu: sudo apt update && sudo apt install -y git
+macOS (Homebrew): brew install git
+Windows: install from https://git-scm.com/ or use Chocolatey: choco install git
+Python 3 (>=3.8)
+Purpose: run Flask backend
+Ubuntu: sudo apt install -y python3 python3-venv python3-pip
+macOS (Homebrew): brew install python
+Windows: download installer from https://www.python.org/downloads/ (check “Add to PATH”)
+Create & activate Python virtual environment (no install — uses python3 -m venv)
+Commands (Linux/macOS):
+python3 -m venv venv
+source venv/bin/activate
+Windows (PowerShell):
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+After activation, install backend Python packages (below)
+Python backend dependencies (from backend/requirements.txt)
+Packages and versions used in the project:
+Flask==2.2.5
+Flask-Cors==3.0.10
+python-dotenv==1.0.0
+Install:
+pip install -r backend/requirements.txt
+or pip install Flask==2.2.5 Flask-Cors==3.0.10 python-dotenv==1.0.0
+Node.js and npm
+Purpose: run and build React frontend
+Recommended: Node 16.x or Node 18.x LTS (react-scripts 5 works with Node 14+, but use 16+)
+Ubuntu (example Node 18 via NodeSource):
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+macOS (Homebrew):
+brew install node
+Windows:
+Install Node from https://nodejs.org/en/download/ or use Chocolatey: choco install nodejs-lts
+Verify: node -v && npm -v
+Frontend npm packages
+The project uses create-react-app (react-scripts). To install:
+cd frontend
+npm install
+Then run dev server:
+npm start
+For production build:
+npm run build
+(Optional but recommended) Tools for production / deployment
+Gunicorn (WSGI server for Python)
+pip install gunicorn
+Nginx (reverse proxy / static asset serving)
+Ubuntu: sudo apt install -y nginx
+Certbot (Let's Encrypt TLS)
+Ubuntu: sudo apt install certbot python3-certbot-nginx
+Docker (optional alternative)
+Install Docker Desktop on Windows/macOS or docker-engine on Linux
+(Optional) SMTP/email support (if you want contact form to send emails)
+Install an SMTP library or configure Flask to use an SMTP server (the current code writes to contacts.json only)
+Python package: pip install Flask-Mail or use external email service (SendGrid, Mailgun)
+Environment & configuration notes
+
+Backend runs by default on http://localhost:5000 (app.py). Port can be changed.
+Frontend dev server runs on http://localhost:3000 by default (react-scripts).
+API base used by frontend: default in code is http://localhost:5000/api. If backend runs elsewhere, set REACT_APP_API_BASE environment variable in frontend (e.g., export REACT_APP_API_BASE="http://yourserver:5000" before npm start).
+Images: add provided images to backend/static/images/ named: image1.jpg, image2.jpg, image3.jpg, image4.jpg.
+contacts.json: created at runtime in backend/ (make sure backend has write permission).
+Quick step-by-step (Linux/macOS example)
+
+Clone repo (optional):
+git clone <repo> && cd dzaleka-cdss-website
+Prepare backend:
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+(Ensure backend/static/images contains image1.jpg..image4.jpg)
+python app.py
+Backend now available at http://localhost:5000
+Prepare frontend (new terminal):
+cd frontend
+npm install
+npm start
+Frontend opens at http://localhost:3000 and calls API at http://localhost:5000/api
+To run production with static build:
+cd frontend
+npm run build
+Copy build into backend static folder (example):
+mkdir -p ../backend/static/frontend
+cp -r build/* ../backend/static/frontend/
+Run backend: python ../backend/app.py
+Visit http://localhost:5000 and Flask will serve the built frontend.
+Quick step-by-step (Windows PowerShell)
+
+Open PowerShell, navigate to project
+Backend:
+cd backend
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+Place images in backend\static\images\ as image1.jpg ... image4.jpg
+python app.py
+Frontend:
+Open another PowerShell
+cd frontend
+npm install
+npm start
+For production build: npm run build and copy to backend\static\frontend
+Troubleshooting tips
+
+If npm start says port 3000 in use, set environment variable PORT or close the app using that port.
+If backend CORS errors occur in dev, Flask-Cors is included — make sure the backend is running and the frontend is using correct REACT_APP_API_BASE.
+If contact form returns 500, check backend console for error and ensure contacts.json is writable.
+Optional nice-to-have installations
+
+Visual Studio Code (editor) with Python and ESLint extensions
+Prettier / ESLint for code formatting
+Postman / Insomnia to test API endpoints
+ngrok for exposing local server to the internet for remote testing
+If you want, I can provide:
+
+Exact terminal commands tailored for your OS (Linux/macOS/Windows) and environment,
+A Dockerfile and docker-compose.yml to run the whole stack in containers,
+A script to automate copying frontend build into backend static folder and starting the server.
+Which option would you like next (Dockerized setup, production deployment steps, or OS-specific install commands)?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+how will i run the project 
+Copilot said: Great — here are clear, step‑by‑step instructions
+Great — here are clear, step‑by‑step instructions to run the Dzaleka CDSS project. I’ll cover development (run backend + frontend separately), a simple production option (build frontend and serve from Flask), Windows PowerShell and Linux/macOS command examples, how to add the 4 images, how to test, and quick troubleshooting tips.
+
+Prerequisites (quick)
+
+Python 3.8+ and pip
+Node.js (recommended v16 or v18) and npm
+Git (optional)
+The project folder containing backend/ and frontend/
+The four images placed at backend/static/images/image1.jpg … image4.jpg
+Add the images
+Make sure the four images you provided are saved as:
+backend/static/images/image1.jpg
+backend/static/images/image2.jpg
+backend/static/images/image3.jpg
+backend/static/images/image4.jpg
+Run in development (recommended while you’re building/testing) This runs the Flask backend on port 5000 and the React dev server on port 3000.
+Linux / macOS
+
+Backend
+Code
+cd path/to/dzaleka-cdss-website/backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+# Run backend (development)
+python app.py
+The Flask backend will start at: http://localhost:5000
+Frontend (new terminal)
+Code
+cd path/to/dzaleka-cdss-website/frontend
+npm install
+npm start
+The React dev server will open at: http://localhost:3000
+Windows (PowerShell)
+
+Backend
+Code
+cd C:\path\to\dzaleka-cdss-website\backend
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python app.py
+Frontend (new PowerShell)
+Code
+cd C:\path\to\dzaleka-cdss-website\frontend
+npm install
+npm start
+Notes for development
+
+The React app calls the API at http://localhost:5000/api by default. If your backend is at a different host/port, set the REACT_APP_API_BASE environment variable before starting the frontend:
+Linux/macOS:
+Code
+export REACT_APP_API_BASE="http://your-backend-host:5000"
+npm start
+Windows PowerShell:
+Code
+$env:REACT_APP_API_BASE="http://your-backend-host:5000"
+npm start
+Simple production option (one server, serve built frontend from Flask) This builds the static React files and serves them using Flask’s static folder.
+Build frontend:
+
+Code
+cd path/to/dzaleka-cdss-website/frontend
+npm install
+npm run build
+That creates a build/ folder inside frontend.
+
+Copy build files into backend static/frontend (example):
+
+Code
+mkdir -p ../backend/static/frontend
+cp -r build/* ../backend/static/frontend/
+(Windows PowerShell)
+
+Code
+New-Item -ItemType Directory -Force -Path ..\backend\static\frontend
+Copy-Item -Path build\* -Destination ..\backend\static\frontend -Recurse -Force
+Run Flask (production/deployment simple run):
+
+Code
+cd path/to/dzaleka-cdss-website/backend
+# activate venv first (see above)
+python app.py
+Visit http://localhost:5000 — Flask will serve the built React app and API at /api/*.
+
+Optional: Use Gunicorn for production (Linux/macOS)
+
+Install Gunicorn in your venv:
+Code
+pip install gunicorn
+gunicorn -w 4 -b 0.0.0.0:5000 app:create_app
+Use Nginx as a reverse proxy and static file server for production, configure TLS with Certbot, etc. (I can provide example Nginx config if you want.)
+Test the site features
+Frontend:
+Open http://localhost:3000 (dev) or http://localhost:5000 (after building & copying).
+Navigate tabs: Home, About, Achievements, Supporters, Gallery, Developer, Contact.
+Gallery should auto-slide images (from backend/static/images).
+Buttons: many show popups/alerts or open modals. Try the “Say hello” and “I want to support” buttons.
+Contact form:
+Go to Contact tab, fill form and submit.
+Backend will append submissions to backend/contacts.json (file is created automatically).
+Check contacts.json to confirm receipt.
+Environment variables and endpoints
+Backend root: http://localhost:5000
+API endpoints:
+GET /api/about
+GET /api/achievements
+GET /api/supporters
+GET /api/gallery
+POST /api/contact (JSON payload: name, email, phone, message)
+Frontend to point to another backend host: set REACT_APP_API_BASE as above.
+Troubleshooting
+Frontend dev server does not start / errors:
+Remove node_modules and reinstall: rm -rf node_modules package-lock.json && npm install
+Ensure Node version is compatible (use nvm to switch Node versions if needed).
+Backend errors on start:
+Activate venv before running.
+Check installed package versions in backend/requirements.txt.
+If port 5000 is in use, set FLASK_RUN_PORT or run app.py with different port.
+CORS errors:
+Flask-Cors is included; ensure your frontend uses the same API base or REACT_APP_API_BASE correctly.
+Contact form errors:
+Check backend console logs and ensure backend has write permission to create contacts.json in backend/ directory.
+Images not showing:
+Confirm files are present: backend/static/images/image1.jpg (and image2..4)
+In the browser open http://localhost:5000/static/images/image1.jpg to verify the server serves the file.
