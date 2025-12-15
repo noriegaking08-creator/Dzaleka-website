@@ -114,6 +114,39 @@ python app.py
 # Visit http://localhost:5000 to see the application
 ```
 
+## 🌐 Vercel Deployment (Next.js Version)
+
+This project also includes a Next.js version that can be deployed directly to Vercel. The Next.js version combines frontend and backend functionality into a single application that works perfectly on Vercel's platform.
+
+### Deploy on Vercel
+
+1. **Go to [vercel.com](https://vercel.com) and sign in**
+2. **Click "New Project"**
+3. **Choose your repository:** `noriegaking08-creator/Dzaleka-website`
+4. **IMPORTANT: Set Root Directory to** `nextjs-frontend`
+5. **Click "Deploy"**
+
+### Vercel Deployment Settings
+
+- **Framework Preset:** Next.js (auto-detected)
+- **Root Directory:** `nextjs-frontend`
+- **Build Command:** `npm run build` (auto-detected)
+- **Output Directory:** (auto-detected)
+- **Install Command:** `npm install` (auto-detected)
+
+### Next.js Version Features
+
+The Next.js version includes all functionality of the original Flask/React app:
+- All frontend components with animations and theme switching
+- All API endpoints converted to Next.js API routes:
+  - `/api/about` - School information
+  - `/api/achievements` - School achievements
+  - `/api/supporters` - School supporters
+  - `/api/gallery` - Gallery with image URLs
+  - `/api/contact` - Contact form with file storage
+- Same styling and responsive design
+- Same TypeScript type safety
+
 ## 🌐 API Endpoints
 
 | Method | Endpoint           | Description                           |
