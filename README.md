@@ -139,8 +139,8 @@ This project is licensed under the MIT License.
 ## 👥 Contact
 
 - **Developer**: Ndizeye Noriega
-- **Email**: mwi.director@jrs.net
-- **Phone**: +265 881 08 28 30
+- **Email**: ndizeyenoriega@gmail.com
+- **Phone**: +265 995 208 178
 
 ### Supporting Organizations
 

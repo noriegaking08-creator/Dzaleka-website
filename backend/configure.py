@@ -8,6 +8,6 @@ CONTACTS_FILE = os.path.join(BASE_DIR, "contacts.json")
 SITE_INFO = {
     "name": "Dzaleka Community Day Secondary School (Dzaleka CDSS)",
     "location": "Dzaleka Refugee Camp, Dowa District, Malawi (M16 road)",
-    "email": "mwi.director@jrs.net",
-    "phone": "+265 881 08 28 30"
+    "email": "ndizeyenoriega@gmail.com",
+    "phone": "+265 995 208 178"
 }
