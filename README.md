@@ -134,6 +134,10 @@ This project also includes a Next.js version that can be deployed directly to Ve
 - **Output Directory:** (auto-detected)
 - **Install Command:** `npm install` (auto-detected)
 
+### Alternative: Using vercel.json for subdirectory deployment
+
+If you're deploying the entire repository but want to serve the Next.js app from the subdirectory, use the root-level vercel.json file. This approach tells Vercel to build and serve the Next.js application from the `nextjs-frontend` directory.
+
 ### Next.js Version Features
 
 The Next.js version includes all functionality of the original Flask/React app:
