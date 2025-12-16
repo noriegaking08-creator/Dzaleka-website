@@ -123,20 +123,18 @@ This project also includes a Next.js version that can be deployed directly to Ve
 1. **Go to [vercel.com](https://vercel.com) and sign in**
 2. **Click "New Project"**
 3. **Choose your repository:** `noriegaking08-creator/Dzaleka-website`
-4. **IMPORTANT: Set Root Directory to** `nextjs-frontend`
+4. **IMPORTANT: In the Project Settings, set Root Directory to** `nextjs-frontend`
 5. **Click "Deploy"**
 
 ### Vercel Deployment Settings
 
 - **Framework Preset:** Next.js (auto-detected)
-- **Root Directory:** `nextjs-frontend`
+- **Root Directory:** `nextjs-frontend` (set this in the Vercel dashboard)
 - **Build Command:** `npm run build` (auto-detected)
 - **Output Directory:** (auto-detected)
 - **Install Command:** `npm install` (auto-detected)
 
-### Alternative: Using vercel.json for subdirectory deployment
-
-If you're deploying the entire repository but want to serve the Next.js app from the subdirectory, use the root-level vercel.json file. This approach tells Vercel to build and serve the Next.js application from the `nextjs-frontend` directory.
+**Note:** The `nextjs-frontend` directory is where your Next.js application resides. When importing your project in Vercel, make sure to set the Root Directory to `nextjs-frontend` in the deployment settings. This tells Vercel where to find your Next.js application and its package.json file.
 
 ### Next.js Version Features
 
