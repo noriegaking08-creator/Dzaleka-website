@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0b6e4f"/>
+  <rect x="50" y="100" width="700" height="400" rx="20" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="200" cy="250" r="50" fill="#f4b400"/>
+  <circle cx="300" cy="250" r="50" fill="#f4b400"/>
+  <circle cx="400" cy="250" r="50" fill="#f4b400"/>
+  <circle cx="500" cy="250" r="50" fill="#f4b400"/>
+  <circle cx="600" cy="250" r="50" fill="#f4b400"/>
+  <circle cx="250" cy="350" r="50" fill="#f4b400"/>
+  <circle cx="350" cy="350" r="50" fill="#f4b400"/>
+  <circle cx="450" cy="350" r="50" fill="#f4b400"/>
+  <circle cx="550" cy="350" r="50" fill="#f4b400"/>
+  <text x="400" y="500" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Group Photo</text>
+  <text x="400" y="550" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Dzaleka CDSS Students</text>
+</svg>
