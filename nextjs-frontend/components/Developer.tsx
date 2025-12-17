@@ -29,7 +29,7 @@ const Developer: React.FC = () => {
             style={{ marginTop: 20, textAlign: 'center' }}
           >
             <a
-              href="https://dzaleka-best.vercel.app/"
+              href="https://desire-portifolio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
