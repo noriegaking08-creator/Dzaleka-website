@@ -118,23 +118,27 @@ python app.py
 
 This project also includes a Next.js version that can be deployed directly to Vercel. The Next.js version combines frontend and backend functionality into a single application that works perfectly on Vercel's platform.
 
-### Deploy on Vercel
+### Deploy on Vercel (One-Click Setup)
 
 1. **Go to [vercel.com](https://vercel.com) and sign in**
 2. **Click "New Project"**
 3. **Choose your repository:** `noriegaking08-creator/Dzaleka-website`
-4. **IMPORTANT: In the Project Settings, set Root Directory to** `nextjs-frontend`
-5. **Click "Deploy"**
+4. **IMPORTANT: Click "Edit" next to the Root Directory setting and change it to** `nextjs-frontend`
+5. **All other settings will auto-detect correctly**
+6. **Click "Deploy"**
 
-### Vercel Deployment Settings
+### Vercel Deployment Settings (Auto-Detected After Root Directory Change)
 
-- **Framework Preset:** Next.js (auto-detected)
-- **Root Directory:** `nextjs-frontend` (set this in the Vercel dashboard)
+- **Framework Preset:** Next.js (auto-detected after setting root directory)
+- **Root Directory:** `nextjs-frontend` (change this in the UI)
 - **Build Command:** `npm run build` (auto-detected)
 - **Output Directory:** (auto-detected)
 - **Install Command:** `npm install` (auto-detected)
 
-**Note:** The `nextjs-frontend` directory is where your Next.js application resides. When importing your project in Vercel, make sure to set the Root Directory to `nextjs-frontend` in the deployment settings. This tells Vercel where to find your Next.js application and its package.json file.
+**Note:** This is the standard approach for monorepos. The Next.js application is located in the `nextjs-frontend` subdirectory. Once you set the root directory in Vercel's UI during project setup, everything else will auto-detect correctly. After the initial setup, all deployments will work automatically.
+
+**Alternative Configuration (if automatic detection doesn't work):**
+If you encounter issues with automatic detection, you may also need to set the "Build Command" to `cd nextjs-frontend && npm run build` and "Install Command" to `cd nextjs-frontend && npm install` in the Vercel dashboard.
 
 ### Next.js Version Features
 
