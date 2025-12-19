@@ -4,10 +4,15 @@ import { fetchJSON } from "../utils/api";
 
 const Gallery: React.FC = () => {
   const [images, setImages] = useState<any[]>([
-    { id: 1, url: "/static/images/placeholder1.svg", caption: "Students and donation boxes at Dzaleka CDSS" },
-    { id: 2, url: "/static/images/placeholder2.svg", caption: "Computer lab students learning digital skills" },
-    { id: 3, url: "/static/images/placeholder3.svg", caption: "Large group photo of Dzaleka CDSS students" },
-    { id: 4, url: "/static/images/placeholder4.svg", caption: "Students exploring 3D-printing / STEM tools" }
+    { id: 1, url: "/static/images/image1.jpg", caption: "Students and donation boxes at Dzaleka CDSS" },
+    { id: 2, url: "/static/images/image2.jpg", caption: "Computer lab students learning digital skills" },
+    { id: 3, url: "/static/images/image3.jpg", caption: "Large group photo of Dzaleka CDSS students" },
+    { id: 4, url: "/static/images/image4.jpg", caption: "Students exploring 3D-printing / STEM tools" },
+    { id: 5, url: "/static/images/2021 National Schools Science Fair Winners.webp", caption: "2021 National Schools Science Fair Winners" },
+    { id: 6, url: "/static/images/25221.jpg", caption: "School events and activities" },
+    { id: 7, url: "/static/images/Inua donates papers to students.webp", caption: "Inua donates papers to students" },
+    { id: 8, url: "/static/images/school compound.jpg", caption: "School compound view" },
+    { id: 9, url: "/static/images/students.jpg", caption: "Students at Dzaleka CDSS" }
   ]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);

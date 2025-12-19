@@ -1,11 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Gallery data - Using placeholder images that will work in any environment
+// Gallery data - Using actual images from backend with appropriate captions
 const GALLERY = [
-  { id: 1, file: "placeholder1.svg", caption: "Students and donation boxes at Dzaleka CDSS" },
-  { id: 2, file: "placeholder2.svg", caption: "Computer lab students learning digital skills" },
-  { id: 3, file: "placeholder3.svg", caption: "Large group photo of Dzaleka CDSS students" },
-  { id: 4, file: "placeholder4.svg", caption: "Students exploring 3D-printing / STEM tools" }
+  { id: 1, file: "image1.jpg", caption: "Students and donation boxes at Dzaleka CDSS" },
+  { id: 2, file: "image2.jpg", caption: "Computer lab students learning digital skills" },
+  { id: 3, file: "image3.jpg", caption: "Large group photo of Dzaleka CDSS students" },
+  { id: 4, file: "image4.jpg", caption: "Students exploring 3D-printing / STEM tools" },
+  { id: 5, file: "2021 National Schools Science Fair Winners.webp", caption: "2021 National Schools Science Fair Winners" },
+  { id: 6, file: "25221.jpg", caption: "School events and activities" },
+  { id: 7, file: "Inua donates papers to students.webp", caption: "Inua donates papers to students" },
+  { id: 8, file: "school compound.jpg", caption: "School compound view" },
+  { id: 9, file: "students.jpg", caption: "Students at Dzaleka CDSS" }
 ];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
